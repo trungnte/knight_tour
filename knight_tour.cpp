@@ -78,21 +78,6 @@ int checkValid(int s[][SIZE_BOARD_CHESS], int x, int y, int move)
     return ret;
 }
 
-/*
-Backtracking(k) {
-	for([Mỗi phương án chọn i(thuộc tập D)]) {
-		if ([Chấp nhận i]) {
-			[Chọn i cho X[k]];
-			if ([Thành công]) {
-				[Đưa ra kết quả];
-			} else {
-				Backtracking(k+1);
-				[Bỏ chọn i cho X[k]];
-			}
-		}
-	}
-}
-*/
 
 int move_one_step(int s[][SIZE_BOARD_CHESS], int &x, int &y, int move, int log[], int cnt_step)
 {
@@ -149,11 +134,6 @@ int solveKnight(int s[][SIZE_BOARD_CHESS], int x, int y)
                 // backward one step
                 if(moved_way >= 8){
                     count_steps--;
-                    // if(count_steps == 62){
-                    //     printBoardChess(s);
-                    //     printf("[%d][%d]:%d (%d)\r\n", pos_x, pos_y, moved_way, count_steps);
-                    //     break;
-                    // }
                     moved_way = log[count_steps];
                     int old_x = pos_x;
                     int old_y = pos_y;
